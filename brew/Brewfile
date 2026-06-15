@@ -1,135 +1,265 @@
 tap "anomalyco/tap"
+tap "homebrew-ffmpeg/ffmpeg"
 tap "oven-sh/bun"
 tap "rustmailapp/rustmail"
-brew "c-ares"
-brew "openssl@3"
-brew "python@3.14"
-brew "automake"
-brew "bash"
-brew "btop"
-brew "fribidi"
-brew "harfbuzz"
-brew "chafa"
-brew "clang-format"
-brew "cloc"
-brew "cloudflare-wrangler"
-brew "cmake"
-brew "cocoapods"
-brew "ffmpeg"
-brew "fnm"
-brew "fzf"
-brew "pkgconf"
-brew "gh"
-brew "ghc"
-brew "git"
-brew "git-filter-repo"
-brew "go"
-brew "go-md2man"
-brew "htop"
-brew "icoutils"
-brew "imagemagick"
-brew "jupyterlab"
-brew "lazydocker"
-brew "lazygit"
-brew "libgit2"
-brew "libmagic"
-brew "libmetalink"
-brew "mas"
-brew "mosquitto"
-brew "nasm"
-brew "neovim"
-brew "nmap"
-brew "ollama", restart_service: :changed
-brew "openvpn"
-brew "php"
-brew "pipx"
-brew "pnpm"
-brew "postgis"
-brew "postgresql@17", restart_service: :changed, link: true
-brew "potrace"
-brew "pstree"
-brew "python-setuptools"
-brew "redis", restart_service: :changed
-brew "resvg"
-brew "ripgrep"
-brew "rust"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Asynchronous DNS library
+brew "c-ares"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Arduino command-line interface
+brew "arduino-cli"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# CLI tool for analyzing Claude Code usage from local JSONL files
+brew "ccusage"
+# Implementation of the Unicode BiDi algorithm
+brew "fribidi"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Statistics utility to count lines of code
+brew "cloc"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
+# Cross-platform make
+brew "cmake"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Static analysis of C and C++ code
+brew "cppcheck"
+# Fast and simple Node.js version manager
+brew "fnm"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# GitHub command-line tool
+brew "gh"
+# Glorious Glasgow Haskell Compilation System
+brew "ghc"
+# Distributed revision control system
+brew "git"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
+# Open-source GitLab command-line tool
+brew "glab"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Converts markdown into roff (man pages)
+brew "go-md2man"
+# Improved top (interactive process viewer)
+brew "htop"
+# Create and extract MS Windows icons and cursors
+brew "icoutils"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Interactive environments for writing and running code
+brew "jupyterlab"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
+# Implementation of the file(1) command
+brew "libmagic"
+# C library to parse Metalink XML files
+brew "libmetalink"
+# Mac App Store command-line interface
+brew "mas"
+# Message broker implementing the MQTT protocol
+brew "mosquitto"
+# Netwide Assembler (NASM) is an 80x86 assembler
+brew "nasm"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
+# Create, run, and share large language models (LLMs)
+brew "ollama", restart_service: :changed
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
+# General-purpose scripting language
+brew "php"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Adds support for geographic objects to PostgreSQL
+brew "postgis"
+# Object-relational database system
+brew "postgresql@17", restart_service: :changed, link: true
+# Convert bitmaps to vector graphics
+brew "potrace"
+# Show ps output as a tree
+brew "pstree"
+# Easily download, build, install, upgrade, and uninstall Python packages
+brew "python-setuptools"
+# Persistent key-value database, with built-in net interface
+brew "redis", restart_service: :changed
+# SVG rendering tool and library
+brew "resvg"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Enterprise search platform from the Apache Lucene project
 brew "solr"
+# Proxy server that works as a poor man's VPN
 brew "sshuttle"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Command-line tool for Stripe
 brew "stripe-cli"
+# Opinionated Lua code formatter
 brew "stylua"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
+# Command-line tool to interact with Gitea servers
 brew "tea"
+# User interface to the TELNET protocol
 brew "telnet"
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
 brew "tree-sitter-cli"
+# Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Vi 'workalike' with many additional features
 brew "vim"
+# Command-line client for WebSockets
 brew "websocat"
+# Internet file retriever
 brew "wget"
+# Generate your Xcode project from a spec file and your folder structure
+brew "xcodegen"
+# Flexible and fast Zsh plugin manager
 brew "zinit"
+# UNIX shell (command interpreter)
 brew "zsh"
-brew "anomalyco/tap/opencode"
-brew "oven-sh/bun/bun"
-brew "rustmailapp/rustmail/rustmail"
+# Image editing and design software
 cask "affinity"
+# Allows connection to a computer remotely
 cask "anydesk"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# Anthropic's official Claude AI desktop app
 cask "claude"
+# OpenAI's coding agent that runs in your terminal
 cask "codex"
+# Download and manage your addons and mods
 cask "curseforge"
+# Reverse engineering platform powered by Rizin
 cask "cutter"
+# Server and cloud storage browser
 cask "cyberduck"
+# Browser for SQLite databases
 cask "db-browser-for-sqlite"
+# Voice and text chat software
 cask "discord"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Utility that prevents the system from going to sleep
+cask "domzilla-caffeine"
+# Matrix collaboration client
 cask "element"
+# Launcher for *Epic Games* games
 cask "epic-games"
+# Email client
 cask "fastmail"
+# Collaborative team software
 cask "figma"
+# Web browser
 cask "firefox"
+# UI toolkit for building applications for mobile, web and desktop
 cask "flutter"
 cask "font-jetbrains-mono-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# 2D and 3D game engine
 cask "godot"
+# Web browser
 cask "google-chrome"
+# Chromium-based web browser
 cask "helium-browser"
+# Apple tool to create multi-platform icons
 cask "icon-composer"
+# Electronics design automation suite
 cask "kicad"
+# Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Hosted VPN service that lets you securely extend LAN-like networks
 cask "logmein-hamachi"
+# Provides updates to various Microsoft products
 cask "microsoft-auto-update"
+# Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Sandbox construction video game
 cask "minecraft"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# Handy utility to manage and customize the notch area
 cask "notchnook"
+# Cloud storage client
+cask "onedrive"
+# Client program for the OpenVPN Access Server
 cask "openvpn-connect"
+# Web browser
 cask "opera"
+# Remote desktop
 cask "parsec"
+# Administration and development platform for PostgreSQL
 cask "pgadmin4"
+# Imaging utility to install operating systems to a microSD card
 cask "raspberry-pi-imager"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Tool to reverse the direction of scrolling
 cask "scroll-reverser"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Video game digital distribution service
 cask "steam"
+# Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Remote access and connectivity software focused on security
 cask "teamviewer"
+# Web browser focusing on security
 cask "tor-browser"
+# Open-source code editor
 cask "visual-studio-code"
 mas "Bitwarden", id: 1352778147
 mas "CleanMyKeyboard", id: 6468120888
 mas "Developer", id: 640199958
+mas "Keepa - Price Tracker", id: 1533805339
 mas "Keynote", id: 361285480
 mas "Kindle", id: 302584613
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "NordVPN", id: 905953485
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Pixelmator Pro", id: 6746662575
+mas "uBlock Origin Lite", id: 6745342698
 mas "WhatsApp", id: 310633997
 mas "Windows App", id: 1295203466
 mas "Xcode", id: 497799835
