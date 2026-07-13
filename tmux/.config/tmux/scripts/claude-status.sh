@@ -2,16 +2,24 @@
 
 set -euo pipefail
 
-PLUGIN_DIR="$HOME/.config/tmux/plugins/tmux-claude-status"
+PLUGIN_DIR="$HOME/.config/tmux/plugins/tmux-ccradar"
 source "$PLUGIN_DIR/scripts/helpers.sh"
 
-STATUS_DIR="$HOME/.cache/tmux-claude-status"
+STATUS_DIR="$HOME/.cache/tmux-ccradar"
 
 fg=$(tmux show -gqv @thm_fg)
 surface=$(tmux show -gqv @thm_surface_0)
 green=$(tmux show -gqv @thm_green)
 peach=$(tmux show -gqv @thm_peach)
 yellow=$(tmux show -gqv @thm_yellow)
+
+hooks_ok=""
+raw=$(tmux show-environment -g TMUX_CCRADAR_HOOKS_OK 2>/dev/null) && hooks_ok="${raw#*=}"
+
+working_ttl=""
+raw=$(tmux show-environment -g TMUX_CCRADAR_WORKING_TTL 2>/dev/null) && working_ttl="${raw#*=}"
+case "$working_ttl" in ''|*[!0-9]*) working_ttl="$CCRADAR_DEFAULT_WORKING_TTL" ;; esac
+now=$(date +%s)
 
 total=0
 working=0
@@ -24,14 +32,18 @@ while read -r pane_id; do
     status_file="$STATUS_DIR/${pane_id}.status"
     [ -f "$status_file" ] || continue
 
-    ((total++)) || true
-    pane_status=$(cat "$status_file" 2>/dev/null)
-    if [[ "$pane_status" == "working" ]]; then
-        ((working++)) || true
-    elif [[ "$pane_status" == "waiting" ]]; then
-        ((waiting++)) || true
-    fi
+    pane_status=$(effective_state "$status_file" "$working_ttl" "$now")
+    total=$((total + 1))
+    case "$pane_status" in
+        working) working=$((working + 1)) ;;
+        waiting) waiting=$((waiting + 1)) ;;
+    esac
 done <<< "$claude_panes"
+
+if [ "$hooks_ok" != "1" ] && [ -n "$claude_panes" ]; then
+    echo "#[fg=${peach}]⚠ hooks not configured"
+    exit 0
+fi
 
 idle=$((total - working - waiting))
 
