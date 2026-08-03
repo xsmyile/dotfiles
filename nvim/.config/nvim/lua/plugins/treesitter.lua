@@ -12,7 +12,6 @@ local parsers = {
   "json",
   "yaml",
   "vue",
-  "tmux",
   "sql",
   "bash",
   "http",
