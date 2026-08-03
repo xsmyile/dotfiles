@@ -1,0 +1,25 @@
+[core]
+	editor = nvim
+	autocrlf = input
+	eol = lf
+	pager = delta
+
+[init]
+	defaultBranch = master
+
+[pull]
+	rebase = false
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = Catppuccin Macchiato
+
+[include]
+	path = ~/.gitconfig.local
+
+[includeIf "gitdir:~/mdev/"]
+	path = ~/mdev/.gitconfig-work
