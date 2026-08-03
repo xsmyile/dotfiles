@@ -21,7 +21,7 @@ export CC="/usr/bin/clang"
 
 # Homebrew (inlined from: /opt/homebrew/bin/brew shellenv)
 export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_BUNDLE_FILE="$HOME/brew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/brew/Brewfile"
 export HOMEBREW_PREFIX="/opt/homebrew"
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
 export HOMEBREW_REPOSITORY="/opt/homebrew"
