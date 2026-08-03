@@ -23,9 +23,21 @@ _darcs
 
 # Custom ignores
 .mcp.json
+^/\.claude$
+^/\.serena$
 
 .DS_Store
 .stow-local-ignore
 
 README.md
 CLAUDE.md
+
+# Stow packages -- deployed individually, never as part of `stow .`
+^/brew$
+^/ghostty$
+^/git$
+^/lazygit$
+^/ngrok$
+^/nvim$
+^/opencode$
+^/tmux$
