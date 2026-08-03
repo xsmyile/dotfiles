@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
+    "saghen/blink.cmp",
     {
       "folke/lazydev.nvim",
       ft = "lua",
@@ -14,7 +14,7 @@ return {
     },
   },
   config = function()
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(ev)
