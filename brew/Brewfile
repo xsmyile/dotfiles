@@ -1,7 +1,8 @@
-tap "anomalyco/tap"
-tap "homebrew-ffmpeg/ffmpeg"
-tap "oven-sh/bun"
-tap "rustmailapp/rustmail"
+tap "anomalyco/tap", trusted: true
+tap "homebrew-ffmpeg/ffmpeg", trusted: true
+tap "oven-sh/bun", trusted: true
+tap "rustmailapp/rustmail", trusted: true
+tap "xsmyile/sissy"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Static checker for GitHub Actions workflow files
@@ -40,6 +41,8 @@ brew "cmake"
 brew "cocoapods"
 # Static analysis of C and C++ code
 brew "cppcheck"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Fast and simple Node.js version manager
 brew "fnm"
 # Command-line fuzzy finder written in Go
@@ -52,6 +55,10 @@ brew "gh"
 brew "ghc"
 # Distributed revision control system
 brew "git"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
 # Open-source GitLab command-line tool
@@ -72,8 +79,6 @@ brew "jupyterlab"
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
-# C library of Git core methods that is re-entrant and linkable
-brew "libgit2"
 # Implementation of the file(1) command
 brew "libmagic"
 # C library to parse Metalink XML files
@@ -116,8 +121,8 @@ brew "resvg"
 brew "ripgrep"
 # Safe, concurrent, practical language
 brew "rust"
-# Enterprise search platform from the Apache Lucene project
-brew "solr"
+# Command-line utility to interact with Sentry
+brew "sentry-cli"
 # Proxy server that works as a poor man's VPN
 brew "sshuttle"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -128,8 +133,6 @@ brew "stripe-cli"
 brew "stylua"
 # Tool to enforce Swift style and conventions
 brew "swiftlint"
-# Command-line tool to interact with Gitea servers
-brew "tea"
 # User interface to the TELNET protocol
 brew "telnet"
 # Terminal multiplexer
@@ -154,12 +157,24 @@ brew "xcodegen"
 brew "zinit"
 # UNIX shell (command interpreter)
 brew "zsh"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
+# Play, record, convert, and stream audio and video
+brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: ["with-opencore-amr"]
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# Self-hosted SMTP mail catcher with web UI, REST API, and CI assertions
+brew "rustmailapp/rustmail/rustmail"
 # Image editing and design software
 cask "affinity"
 # Allows connection to a computer remotely
 cask "anydesk"
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# 3D creation suite
+cask "blender"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # OpenAI's coding agent that runs in your terminal
@@ -235,6 +250,8 @@ cask "rectangle"
 cask "scroll-reverser"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Menubar token usage mascot for Claude Code and Codex
+cask "xsmyile/sissy/sissy", trusted: true
 # Video game digital distribution service
 cask "steam"
 # Mesh VPN based on WireGuard
