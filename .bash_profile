@@ -27,6 +27,9 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
+# Docker Desktop CLI tools (docker, compose, kubectl)
+[[ ":$PATH:" != *":$HOME/.docker/bin:"* ]] && export PATH="$PATH:$HOME/.docker/bin"
+
 # fnm (Fast Node Manager)
 eval "$(fnm env --use-on-cd --resolve-engines --log-level quiet --shell bash)"
 
