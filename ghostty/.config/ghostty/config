@@ -11,6 +11,7 @@ window-padding-color = extend
 font-family = "SF Mono"
 font-size = 16
 font-thicken = true
+font-thicken-strength = 100
 
 confirm-close-surface = false
 cursor-style = block
