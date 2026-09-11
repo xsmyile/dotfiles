@@ -40,4 +40,5 @@ CLAUDE.md
 ^/ngrok$
 ^/nvim$
 ^/opencode$
+^/searxng$
 ^/tmux$

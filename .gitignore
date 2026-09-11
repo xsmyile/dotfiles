@@ -15,3 +15,7 @@ tmux/.config/tmux/tpm/
 tmux/.config/tmux/plugins/
 
 opencode/
+
+# SearXNG local environment and configuration backups
+searxng/**/.env
+searxng/**/*.bak*

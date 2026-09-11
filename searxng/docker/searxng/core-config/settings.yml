@@ -1,0 +1,94 @@
+use_default_settings: true
+
+general:
+  instance_name: "SearXNG"
+
+search:
+  autocomplete: "google"
+  default_lang: "auto"
+  formats:
+    - html
+    - json
+  suspended_times:
+    SearxEngineCaptcha: 600
+
+server:
+  image_proxy: true
+
+ui:
+  default_locale: "en"
+
+outgoing:
+  request_timeout: 5.0
+  max_request_timeout: 12.0
+  pool_connections: 100
+  enable_http2: true
+
+engines:
+  - name: bing images
+    enable_http3: false
+  - name: bing news
+    enable_http3: false
+  - name: bing videos
+    enable_http3: false
+
+  - name: google images
+    disabled: false
+  - name: qwant images
+    disabled: false
+
+  - name: devicons
+    categories: [icons]
+  - name: lucide
+    categories: [icons]
+
+  - name: artic
+    disabled: true
+
+  - name: startpage
+    disabled: true
+  - name: startpage images
+    disabled: true
+  - name: startpage news
+    disabled: true
+  - name: etymonline
+    disabled: true
+  - name: kickass
+    disabled: true
+  - name: solidtorrents
+    disabled: true
+  - name: lingva
+    disabled: true
+  - name: dictzone
+    disabled: true
+  - name: arch linux wiki
+    disabled: true
+  - name: pypi
+    disabled: true
+  - name: bandcamp
+    disabled: true
+  - name: wttr.in
+    disabled: true
+  - name: semantic scholar
+    disabled: true
+  - name: vimeo
+    disabled: true
+
+  - name: openmeteo
+    disabled: false
+  - name: crossref
+    disabled: false
+  - name: deezer
+    disabled: false
+  - name: qwant videos
+    disabled: false
+  - name: npm
+    disabled: false
+  - name: pkg.go.dev
+    disabled: false
+  - name: crates.io
+    disabled: false
+  - name: ansa
+    disabled: false
+  - name: il post
+    disabled: false
